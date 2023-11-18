@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: 3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            width: 70%;
+            text-align: center;
+            font-size: 250%;
+            margin-top: 5%;
+        }
+        form{
+            margin-top: 3%;
+            height: 60vh;
+            padding-top: 4%;
+            padding-bottom: 3%;
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+        }
+
+        .areaCords{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .Cords{
+            background-image:linear-gradient(rgba(161, 161, 161, 0.753), rgba(78, 78, 78, 0.753));
+            border: 1px solid black;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 30%;
+        }
+
+        .Cords h1{
+            font-size: 150%;
+            margin-bottom: 5%;
+        }
+
+        input{
+            height: 6vh;
+            width: 50%;
+            text-align: center;
+            font-size: 100%;
+        }
+
+        button{
+            height: 20%;
+            width: 30%;
+            font-size: 120%;
+            background-image: linear-gradient(rgba(161, 161, 161, 0.753), rgba(78, 78, 78, 0.753));
+            transition: 700ms;
+        }
+
+        button:hover{
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Area de parabolas de ponte</h1>
+    <form method="post" action="/ajustar_parabola">
+        <div class="areaCords">
+            <div class="Cords">
+                <h1>1º limite</h1>
+                <input type="number" name="coord-x" id="coord-x-1" step="0.01" placeholder="Coordenada X1:" required><br>
+                <input type="number" name="coord-y" id="coord-y-1" step="0.01" placeholder="Coordenada Y1:" required><br>
+            </div>
+            
+            <div class="Cords">
+                <h1>Ponto maximo</h1>
+                <input type="number" name="coord-x" id="coord-x-3" step="0.01" placeholder="Coordenada X1:" required><br>
+                <input type="number" name="coord-y" id="coord-y-3" step="0.01" placeholder="Coordenada Y1:" required><br>
+            </div>
+    
+            <div class="Cords">
+                <h1>2º limite</h1>
+                <input type="number" name="coord-x" id="coord-x-2" step="0.01" placeholder="Coordenada X1:" required><br>
+                <input type="number" name="coord-y" id="coord-y-2" step="0.01" placeholder="Coordenada Y1:" required><br>
+            </div>
+        </div>
+        
+        <button type="submit">Ajustar Parábola</button>
+    </form>
+    <script>
+        fundo = window.document.body;
+
+        function slideBackground() {
+        images = [
+            "https://images.musement.com/cover/0002/13/golden-gate-bridge-jpg_header-112309.jpeg?w=1200&h=630&q=95&fit=crop",
+            "https://wasaki.com.br/wp-content/uploads/2022/02/quais-as-pontes-mais-incriveis-do-mundo.jpg",
+            "https://i0.wp.com/engenharia360.com/wp-content/uploads/pontes-mais-incriveis-blog-da-engenharia-16.jpg?ssl=1"
+        ];
+
+        let index = 0;
+
+        function changeBackground() {
+            fundo.style.backgroundImage = `url(${images[index]})`;
+            index = (index + 1) % images.length;
+        }
+
+        changeBackground(); // Define a primeira imagem
+
+        setInterval(changeBackground, 7000); // Altera a imagem a cada 2 segundos (2000 milissegundos)
+        }
+
+        slideBackground();
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajuste de Parábola</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="section-infos">
+        <button class="backToIndex" onclick="window.location.href='/'">Voltar</button>
+        <div class="areaInfos">
+            <div class="infos">
+                {% if a is defined %}
+                    <p class="funcao">A função da parábola é f(x) = {{ "{:.2f}".format(a) }}x^2 + {{ "{:.2f}".format(b) }}x + {{ "{:.2f}".format(c) }}</p>
+                    <p class="area">A área da parábola é {{ "{:.2f}".format(area) }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
