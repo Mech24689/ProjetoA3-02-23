@@ -1,21 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>Ajuste de Parábola</title>
+
     <style>
+        
+        body{
+            background-image: url("https://blog.professorferretto.com.br/wp-content/uploads/2019/12/formula-das-coordenadas-do-vertice-da-parabola.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-position-y: -40%;
+            background-color:  rgb(210, 219, 131)
+
+        }
+        do
+
+        div.infos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-top: 40px solid transparent;
+            border-bottom: 40px solid transparent;
+            border-right: 40px solid rgb(0, 0, 0);
+            border-left: 0px solid ;
+        }
+        legend {
+            font-weight: bold;
+            font-size: 200%;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            border-style: dashed;
+        }
+        div.fp{
+            width: auto;
+            height: auto;
+            margin-top: -21px;
+            font-size: 200%;
+            color: rgb(0, 0, 0);
+        }
+        div.ap{
+            width: auto;
+            height: auto;
+            margin-top: 30px;
+            font-size: 200%;
+            color: rgb(0, 0, 0);
+        }
+        .funcao{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .area{
+            text-align: center; 
+            font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
+
 </head>
+
 <body>
+
     <div class="section-infos">
-        <button class="backToIndex" onclick="window.location.href='/'">Voltar</button>
+        <button class="backToIndex" onclick="window.location.href='/'"></button>
         <div class="areaInfos">
             <div class="infos">
-                {% if a is defined %}
-                    <p class="funcao">A função da parábola é f(x) = {{ "{:.2f}".format(a) }}x^2 + {{ "{:.2f}".format(b) }}x + {{ "{:.2f}".format(c) }}</p>
-                    <p class="area">A área da parábola é {{ "{:.2f}".format(area) }}</p>
-                {% endif %}
+                <!--{% if a is defined %}-->
+                <div class="fp">
+                    <fieldset>
+                        <legend>Função da parábola</legend>
+                        <p class="funcao">A função da parábola é f(x) = {{ "{:.2f}".format(a) }}x^2 + {{ "{:.2f}".format(b) }}x + {{ "{:.2f}".format(c) }}</p>
+                    </fieldset>
+                </div>
+                    <div class="ap">
+                        <fieldset>
+                            <legend>Área da parábola</legend>
+                            <p class="area">A área da parábola é {{ "{:.2f}".format(area) }}</p>
+                        </fieldset>
+                    <!--{% endif %}-->
+                    </div>
             </div>
         </div>
     </div>
+
 </body>
+
 </html>
