@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Ajuste de Parábola</title>
+
+    <style>
+        
+        body{
+            background-image: url("https://f3m4u8n4.rocketcdn.me/wp-content/uploads/2015/11/ponte-infinito-stockton-inglaterra.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            /*background-position-y: -40%;*/
+            background-color:  rgb(210, 219, 131);
+            padding-top: 50px;
+        }
+        do
+
+        div.infos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 100px;
+            height: 40px;
+            font-size: 120%;
+            background-image: linear-gradient(rgba(161, 161, 161, 0.753), rgba(78, 78, 78, 0.753));
+            transition: 500ms;
+            /* border-top: 40px solid transparent;
+            border-bottom: 40px solid transparent;
+            border-right: 40px solid rgb(0, 0, 0);
+            border-left: 0px solid ; */
+        }
+        button:hover{
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+        legend {
+            font-weight: bold;
+            font-size: 200%;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            border-style: dashed;
+        }
+        div.fp{
+            width: auto;
+            height: auto;
+            margin-top: -21px;
+            font-size: 230%;
+            color: rgb(0, 0, 0);
+            backdrop-filter: blur(10px);
+        }
+        div.ap{
+            width: auto;
+            height: auto;
+            margin-top: 30px;
+            font-size: 230%;
+            color: rgb(0, 0, 0);
+            backdrop-filter: blur(10px);
+        }
+        .funcao{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .area{
+            text-align: center; 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="section-infos">
+        <button class="backToIndex" onclick="window.location.href='/'">Voltar</button>
+        <div class="areaInfos">
+            <div class="infos">
+                <!--{% if a is defined %}-->
+                <div class="fp">
+                    <fieldset>
+                        <legend>Função da parábola</legend>
+                        <p class="funcao">A função da parábola é f(x) = {{ "{:.2f}".format(a) }}x^2 + {{ "{:.2f}".format(b) }}x + {{ "{:.2f}".format(c) }}</p>
+                    </fieldset>
+                </div>
+                    <div class="ap">
+                        <fieldset>
+                            <legend>Área da parábola</legend>
+                            <p class="area">A área da parábola é {{ "{:.2f}".format(area) }}</p>
+                        </fieldset>
+                    <!--{% endif %}-->
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

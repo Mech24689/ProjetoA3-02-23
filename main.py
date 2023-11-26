@@ -23,9 +23,9 @@ def ajustar_parabola():
         xmin, xmax = min(coordenadas_x), max(coordenadas_x)
         area = area_parabola(lambda x: a * x ** 2 + b * x + c, xmin, xmax)
 
-        return render_template('ajuste_parabola.html', a=a, b=b, c=c, area=area)
+        return render_template('ajuste_parabola2.html', a=a, b=b, c=c, area=area)
 
-    return render_template('ajuste_parabola.html', a=None, b=None, c=None, area=None)
+    return render_template('ajuste_parabola2.html', a=None, b=None, c=None, area=None)
 
 def area_parabola(f, xmin, xmax, n_points=1000):
     x_values = np.linspace(xmin, xmax, n_points)
